@@ -5,7 +5,6 @@ import Nav from "../../components/nav"
 import Footer from "../../components/footer"
 import Load from "../../components/loader"
 import Highlight from "../../components/hjs"
-export const revalidate = 0
 export async function generateMetadata({params}){
 let dt = await  manageAnswer(params.answer);
 return{
@@ -17,10 +16,10 @@ return{
 }
 async function manageAnswer(id){
     try{
-        let ans = await fetch(`https://api.stackexchange.com/2.3/answers/${id}/?site=stackoverflow&filter=withbody&key=${process.env.KEY}`);
+        let ans = await fetch(`https://api.stackexchange.com/2.3/answers/${id}/?site=stackoverflow&filter=withbody&key=${process.env.KEY}`,{ cache: 'no-store' });
         let resans = await ans.json();
         let qid = resans.items[0].question_id;
-        let qsn = await fetch(`https://api.stackexchange.com/2.3/questions/${qid}/?site=stackoverflow&filter=withbody&key=${process.env.key}`);
+        let qsn = await fetch(`https://api.stackexchange.com/2.3/questions/${qid}/?site=stackoverflow&filter=withbody&key=${process.env.key}`,{ cache: 'no-store' });
         let resqsn = await qsn.json();
         // console.log(resqsn.items[0].title);
         return {
