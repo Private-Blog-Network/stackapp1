@@ -5,6 +5,7 @@ import Nav from "../../components/nav"
 import Footer from "../../components/footer"
 import Load from "../../components/loader"
 import Highlight from "../../components/hjs"
+export const revalidate = 0
 export async function generateMetadata({params}){
 let dt = await  manageAnswer(params.answer);
 return{
