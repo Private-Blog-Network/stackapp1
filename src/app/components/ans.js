@@ -37,7 +37,7 @@ async function manageAnswer(id){
         let ans = await fetch(`https://api.stackexchange.com/2.3/answers/${id}/?site=stackoverflow&filter=withbody&key=${process.env.KEY}`,{ cache: 'no-store' });
         let resans = await ans.json();
         let qid = resans.items[0].question_id;
-        let qsn = await fetch(`https://api.stackexchange.com/2.3/questions/${qid}/?site=stackoverflow&filter=withbody&key=${process.env.key}`,{ cache: 'no-store' });
+        let qsn = await fetch(`https://api.stackexchange.com/2.3/questions/${qid}/?site=stackoverflow&filter=withbody&key=${process.env.KEY}`,{ cache: 'no-store' });
         let resqsn = await qsn.json();
         // console.log(resqsn.items[0].title);
         return {
