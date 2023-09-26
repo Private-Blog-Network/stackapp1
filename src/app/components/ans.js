@@ -4,6 +4,8 @@ import Nav from "./nav"
 import Footer from "./footer"
 import Load from "./loader"
 import Highlight from "./hjs"
+import Ad1 from "./ad1"
+import Ad2 from "./ad2"
 export default async function Ans({id}){
     let dt = await manageAnswer(id)
     return(
@@ -17,12 +19,28 @@ export default async function Ans({id}){
                         ))
                     }
                     <h1 dangerouslySetInnerHTML={{__html:dt.qtitle}}></h1><hr />
+                    <Ad1/>
                     <div dangerouslySetInnerHTML={{__html:dt.qbody}}></div>
                     <hr />
                     <div className="h3">Solution <li className="h3 fa fa-arrow-down"></li></div>
                     <hr />
+                    <div dangerouslySetInnerHTML={{
+                         __html:`
+                         <script type="text/javascript">
+                         atOptions = {
+                             'key' : '286dc2d72d046f16b7c43cfa6ee77ccc',
+                             'format' : 'iframe',
+                             'height' : 250,
+                             'width' : 300,
+                             'params' : {}
+                         };
+                         document.write('<scr' + 'ipt type="text/javascript" src="//collectbladders.com/286dc2d72d046f16b7c43cfa6ee77ccc/invoke.js"></scr' + 'ipt>');
+                     </script>
+                         `
+                    }}></div>
                     <div dangerouslySetInnerHTML={{__html:dt.abody}}>
                     </div>
+                    <Ad2/>
                 </div>
                 <Footer/>
                 <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strategy="lazyOnload"/>
