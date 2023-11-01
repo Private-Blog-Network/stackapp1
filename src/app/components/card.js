@@ -1,12 +1,17 @@
 import Link from "next/link"
 import Ad1 from "./ad1"
 import Ad2 from "./ad2"
+import Ad3 from "./ad3"
   export default async function Card(props) {
     let data = await qsn(props.name,props.tag?.params.tag);
     return (
+      <>
         <div className="d-flex justify-content-evenly flex-wrap">
           <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100">
           <Ad1/>
+          </div>
+          <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100">
+          <Ad3/>
           </div>
             {data.map((e) => (
                 <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100" key={e.question_id}>
@@ -23,8 +28,10 @@ import Ad2 from "./ad2"
                     <Link href={`/answer/${e.accepted_answer_id}`} className="btn btn-primary rounded-pill mt-2 mb-2 position-relative bottom-0">Read More</Link>
                 </div>
             ))}
-            <Ad2/>
+            
         </div>
+        <Ad2/>
+        </>
     );
 }
 

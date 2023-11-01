@@ -1,8 +1,11 @@
 import Link from "next/link"
 import pls from "./menulist"
+import Script from "next/script"
+
 export default function Nav(props){
 return (
     <>
+<Script id="ads" src="/ad.js"></Script>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
     <Link className="navbar-brand" href={props.page=='page'?`../`:'.'}>My Code Helper</Link>

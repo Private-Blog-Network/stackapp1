@@ -1,12 +1,12 @@
 "use client"
 import {useEffect} from "react"
-export default function Ad1() {
+export default function Ad3() {
 	useEffect(()=>{
 		setTimeout(() => {
-			loadAll()
+            loadAll()
 		}, 500);
 	},[])
 	return(
-		<div className="ad1"></div>
+		<div className="ad3"></div>
 	)
 }
