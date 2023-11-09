@@ -7,8 +7,9 @@ import Highlight from "./hjs"
 import Ad1 from "./ad1"
 import Ad2 from "./ad2"
 import Ad3 from "./ad3"
-export default async function Ans({id}){
-    let dt = await manageAnswer(id)
+export default async function Ans({id,ms}){
+    let dt = ms;
+    let related = await getRelated(dt.qtags[0])
     return(
             <>
             <Nav page="page"/>
@@ -19,16 +20,24 @@ export default async function Ans({id}){
                             <Link href={`../${e}`} className="badge badge-primary m-1" key={i}>{e}</Link>
                         ))
                     }
-                    <h1 dangerouslySetInnerHTML={{__html:dt.qtitle}}></h1><hr />
+                    <h1 className="h1" dangerouslySetInnerHTML={{__html:dt.qtitle}}></h1><hr />
                     <Ad1/>
                     <div dangerouslySetInnerHTML={{__html:dt.qbody}}></div>
                     <hr />
                     <div className="h3">Solution <li className="h3 fa fa-arrow-down"></li></div>
                     <hr />
                   <Ad2/>
-                    <div dangerouslySetInnerHTML={{__html:dt.abody}}>
+                    <div dangerouslySetInnerHTML={{__html:dt.abody}}> 
                     </div>
                     <Ad3/>
+                    <ul className="list-group">
+                      {
+                        related.map((e,i)=>(
+                          <li key={i} className="list-group-item"><Link href={`/answer/${e.accepted_answer_id}`} className="text-primary">{e.title}</Link></li>
+                        ))
+                      }
+                    </ul>
+                    
                 </div>
                 <Footer/>
                 <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strategy="lazyOnload"/>
@@ -38,22 +47,14 @@ export default async function Ans({id}){
     )
 }
 
-async function manageAnswer(id){
-    try{
-        let ans = await fetch(`https://api.stackexchange.com/2.3/answers/${id}/?site=stackoverflow&filter=withbody&key=${process.env.KEY}`,{ cache: 'no-store' });
-        let resans = await ans.json();
-        let qid = resans.items[0].question_id;
-        let qsn = await fetch(`https://api.stackexchange.com/2.3/questions/${qid}/?site=stackoverflow&filter=withbody&key=${process.env.KEY}`,{ cache: 'no-store' });
-        let resqsn = await qsn.json();
-        // console.log(resqsn.items[0].title);
-        return {
-            qtitle:resqsn.items[0].title,
-            qbody:resqsn.items[0].body,
-            qtags:resqsn.items[0].tags,
-            abody:resans.items[0].body
-        }
-
-    }catch(err){
-        console.log("error");
-    }
+async function getRelated(tag){
+try{
+ let req = await fetch(
+    `https://api.stackexchange.com/2.3/search/advanced?tagged=${tag}&accepted=True&site=stackoverflow&key=${process.env.KEY}`
+  );
+let res = await req.json();
+return res.items;
+}catch(err){
+  // 
+}
 }

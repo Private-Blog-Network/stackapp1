@@ -41,13 +41,13 @@ async function qsn(who,tag) {
         let res;
       if(who=='tag'){
         req = await fetch(
-            `https://api.stackexchange.com/2.3/search/advanced?tagged=${tag}&accepted=True&site=stackoverflow&filter=withbody&key=${process.env.KEY}`,{ cache: 'no-store' }
+            `https://api.stackexchange.com/2.3/search/advanced?tagged=${tag}&accepted=True&site=stackoverflow&filter=withbody&key=${process.env.KEY}`
           );
        res = await req.json();
        return res.items;
       }else{
         req = await fetch(
-            "https://api.stackexchange.com/2.3/search/advanced?tagged=html%20;css;javascript&accepted=True&site=stackoverflow&filter=withbody&key="+process.env.KEY,{ cache: 'no-store' }
+            "https://api.stackexchange.com/2.3/search/advanced?tagged=html%20;css;javascript&accepted=True&site=stackoverflow&filter=withbody&key="+process.env.KEY
           );
       res = await req.json();
       return res.items;
