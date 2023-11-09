@@ -39,7 +39,7 @@ function jsonld(){
           "height": 800,
           "width": 1200
         },
-        "description": "${dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"/g,' '):''}",
+        "description": "${dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):''}",
         "url": "/answer/${aid}",
         "mainEntityOfPage": "/answer/${aid}"
       }
