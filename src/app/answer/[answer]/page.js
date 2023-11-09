@@ -1,5 +1,6 @@
 import Ans from "../../components/ans"
 import Script from "next/script"
+import stripHtml from "string-strip-html";
 let dt;
 let aid;
 let m;
@@ -7,7 +8,7 @@ let p;
 export async function generateMetadata({params}){
 return{
     title:dt?.qtitle,
-    description:dt?.qbody.slice(0,500),
+    description:dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n/g,' '):"",
     keywords:dt?.qtags.toString()
 
 }
@@ -20,8 +21,8 @@ function jsonld(){
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "${dt?.qtitle}",
-        "datePublished": "${new Date(p).toISOString()}",
-        "dateModified": "${new Date(m).toISOString()}",
+        "datePublished": "${new Date(p*1000).toISOString()}",
+        "dateModified": "${new Date(m*1000).toISOString()}",
         "publisher": {
           "@type": "Organization",
           "name": "CoderApp",
@@ -38,7 +39,7 @@ function jsonld(){
           "height": 800,
           "width": 1200
         },
-        "description": "${dt?.qbody.slice(0,500)}",
+        "description": "${dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n/g,' '):''}",
         "url": "/answer/${aid}",
         "mainEntityOfPage": "/answer/${aid}"
       }

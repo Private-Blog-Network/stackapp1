@@ -598,6 +598,11 @@ enhanced-resolve@^5.12.0:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
 
+ent@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/ent/-/ent-2.2.0.tgz"
+  integrity sha512-GHrMyVZQWvTIdDtpiEXdHZnFQKzeO09apj8Cbl4pKWy4i0Oprcq17usfDt5aO63swf0JOeMWjWQE/LzgSRuWpA==
+
 es-abstract@^1.19.0, es-abstract@^1.20.4, es-abstract@^1.21.2, es-abstract@^1.21.3:
   version "1.22.1"
   resolved "https://registry.npmjs.org/es-abstract/-/es-abstract-1.22.1.tgz"
@@ -1493,10 +1498,30 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
+  integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.npmjs.org/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz"
+  integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
+
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lodash.trim@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.npmjs.org/lodash.trim/-/lodash.trim-4.5.1.tgz"
+  integrity sha512-nJAlRl/K+eiOehWKDzoBVrSMhK0K3A3YQsUNXHQa5yIrKBAhsZgSu3KoAFoFT+mEgiyBHddZ0pRk1ITpIp90Wg==
+
+lodash.without@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.npmjs.org/lodash.without/-/lodash.without-4.4.0.tgz"
+  integrity sha512-M3MefBwfDhgKgINVuBJCO1YR3+gf6s9HNJsIiZ/Ru77Ws6uTb9eBuvrkpzO+9iLoAaRodGuq7tyrPCx+74QYGQ==
 
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -1863,6 +1888,34 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
+ranges-apply@^3.0.43:
+  version "3.2.4"
+  resolved "https://registry.npmjs.org/ranges-apply/-/ranges-apply-3.2.4.tgz"
+  integrity sha512-oYUOq8xoaJ2CPkZPNu9xHjrsiUlLyqqQdPByx9Cl8of45GUPCfTn5i3JTKtiftDQRG89535xz5wgXvzhGOAicw==
+  dependencies:
+    ranges-merge "^5.0.4"
+
+ranges-merge@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.npmjs.org/ranges-merge/-/ranges-merge-5.0.4.tgz"
+  integrity sha512-B5aRtF+G7COGp9Wa8VW3tgjIaOaMBnqGAEMs4fgJHGTk3hQFOM94QJ5l4a01J8IzRLs1WHl3DopfQch48e6+QA==
+  dependencies:
+    ranges-sort "^3.13.4"
+
+ranges-push@^3.6.10:
+  version "3.7.23"
+  resolved "https://registry.npmjs.org/ranges-push/-/ranges-push-3.7.23.tgz"
+  integrity sha512-hQ6O5cSQvovW1BeE5NOfYkdNSRmKx2HORJPc2tcnl8JmJcgUHNAdA3VgzlSN351TrYTyTVeAf+/9tcIAGXPQVg==
+  dependencies:
+    ranges-merge "^5.0.4"
+    string-collapse-leading-whitespace "^3.0.3"
+    string-trim-spaces-only "^2.8.24"
+
+ranges-sort@^3.13.4:
+  version "3.14.0"
+  resolved "https://registry.npmjs.org/ranges-sort/-/ranges-sort-3.14.0.tgz"
+  integrity sha512-QoqzNY4yf/JtpBaOG12uxWxb/BUu9hPUucakOBrkgKA57GtmjJqMZYauqYryAVMztpkrrO7kqqzrIadYBXT53Q==
+
 react-dom@^18.2.0, react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
@@ -2043,6 +2096,37 @@ streamsearch@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz"
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
+
+string-collapse-leading-whitespace@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.npmjs.org/string-collapse-leading-whitespace/-/string-collapse-leading-whitespace-3.0.3.tgz"
+  integrity sha512-UuPzS8WE+Obvh+CHYR/XiE8XNbPUrDNRIuQEAhugxEYr1IYVMQqt2e+9PzkcrqQ/c5/nXDbPDfCrtDQlw+2j3A==
+
+string-left-right@^2.3.10:
+  version "2.3.32"
+  resolved "https://registry.npmjs.org/string-left-right/-/string-left-right-2.3.32.tgz"
+  integrity sha512-v/mWktI+OKVovuOm+mc5n/qeCANkgiNtgJFZ9kZKcUpIIwa60SLxx3Ubjk2nD4MgBc9shCe3znzV3R7bT1Dvdw==
+  dependencies:
+    lodash.clonedeep "^4.5.0"
+    lodash.isplainobject "^4.0.6"
+
+string-strip-html@^4.3.9:
+  version "4.3.9"
+  resolved "https://registry.npmjs.org/string-strip-html/-/string-strip-html-4.3.9.tgz"
+  integrity sha512-fQllhx29S9F6ruZyVUi7gPlJpyd7yk5EXREWUui95Y8w1Iw+XQhcpBMuCTowcxON3l8i05e5QvX1liBJhYbWag==
+  dependencies:
+    ent "^2.2.0"
+    lodash.isplainobject "^4.0.6"
+    lodash.trim "^4.5.1"
+    lodash.without "^4.4.0"
+    ranges-apply "^3.0.43"
+    ranges-push "^3.6.10"
+    string-left-right "^2.3.10"
+
+string-trim-spaces-only@^2.8.24:
+  version "2.9.0"
+  resolved "https://registry.npmjs.org/string-trim-spaces-only/-/string-trim-spaces-only-2.9.0.tgz"
+  integrity sha512-Ny/6ncfD52McLZbgYhhediuTzLGDjKd53H1QcJBFh1kbZRtsBntYmScJx5LeyPteGDRDbzP+qP6TyqJVj2ef9g==
 
 string.prototype.matchall@^4.0.8:
   version "4.0.8"
