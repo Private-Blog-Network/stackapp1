@@ -22,7 +22,7 @@ function jsonld(){
         "@type": "Article",
         "headline": "${dt?.qtitle}",
         "datePublished": "${new Date(p*1000).toISOString()}",
-        "dateModified": "${new Date(m*1000).toISOString()}",
+        "dateModified": "${new Date(m?m:p*1000).toISOString()}",
         "publisher": {
           "@type": "Organization",
           "name": "CoderApp",
