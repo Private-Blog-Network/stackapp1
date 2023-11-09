@@ -8,7 +8,7 @@ let p;
 export async function generateMetadata({params}){
 return{
     title:dt?.qtitle,
-    description:dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n/g,' '):"",
+    description:dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
     keywords:dt?.qtags.toString()
 
 }
