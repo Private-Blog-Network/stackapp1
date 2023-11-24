@@ -1,5 +1,5 @@
 import Link from 'next/link'
-export default function Footer(){
+export default function Footer({lk}){
     return(
         <>
              <footer className="bg-light text-center text-white">
@@ -46,6 +46,7 @@ export default function Footer(){
   <div className="text-center p-3" style={{'backgroundColor': 'rgba(0, 0, 0, 0.2)'}}>
      {new Date().toLocaleString()}<br/>
      <div>Content Source : <a href="https://stackoverflow.com" target="_blank">Stackoverflow</a></div>
+    {lk?<div>Project Created By : <a href="https://www.codewithsundeep.com" target="_blank">codewithsundeep</a></div>:''}
   </div>
   </div>
 </footer>

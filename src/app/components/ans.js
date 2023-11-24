@@ -7,6 +7,7 @@ import Highlight from "./hjs"
 import Ad1 from "./ad1"
 import Ad2 from "./ad2"
 import Ad3 from "./ad3"
+
 export default async function Ans({id,ms}){
     let dt = ms;
     let related = await getRelated(dt.qtags[0])

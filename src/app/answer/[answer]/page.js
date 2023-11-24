@@ -1,18 +1,19 @@
 import Ans from "../../components/ans"
 import Script from "next/script"
 import stripHtml from "string-strip-html";
+import {metadata} from "../../layout"
 let dt;
 let aid;
 let m;
 let p;
-export async function generateMetadata({params}){
-return{
-    title:dt?.qtitle,
-    description:dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
-    keywords:dt?.qtags.toString()
+// export async function generateMetadata({params}){
+// return{
+//     title:dt?.qtitle,
+//     description:dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
+//     keywords:dt?.qtags.toString()
 
-}
-}
+// }
+// }
 
 function jsonld(){
     return `
@@ -68,13 +69,15 @@ async function manageAnswer(id){
         aid = resans.items[0].answer_id
         m = resans.items[0].last_edit_date
         p = resans.items[0].creation_date
-        return {
+        let rtn =  {
             qtitle:resqsn.items[0].title,
             qbody:resqsn.items[0].body,
             qtags:resqsn.items[0].tags,
             abody:resans.items[0].body
         }
-
+        metadata.title = rtn.qtitle
+        metadata.description = stripHtml(rtn.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' ')
+        return rtn;
     }catch(err){
         console.log("error");
     }
