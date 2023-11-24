@@ -21,7 +21,7 @@ function jsonld(){
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "${dt?.qtitle}",
+        "headline": "[SOLVED] ${dt?.qtitle}",
         "datePublished": "${new Date(p*1000).toISOString()}",
         "dateModified": "${new Date(m?m:p*1000).toISOString()}",
         "publisher": {
@@ -40,7 +40,7 @@ function jsonld(){
           "height": 800,
           "width": 1200
         },
-        "description": "${dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):''}",
+        "description": "${dt.qtitle} ${dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):''}",
         "url": "/answer/${aid}",
         "mainEntityOfPage": "/answer/${aid}"
       }
@@ -69,14 +69,15 @@ async function manageAnswer(id){
         aid = resans.items[0].answer_id
         m = resans.items[0].last_edit_date
         p = resans.items[0].creation_date
+       
         let rtn =  {
             qtitle:resqsn.items[0].title,
             qbody:resqsn.items[0].body,
             qtags:resqsn.items[0].tags,
             abody:resans.items[0].body
         }
-        metadata.title = rtn.qtitle
-        metadata.description = stripHtml(rtn.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' ')
+        metadata.title = "[SOLVED] "+rtn.qtitle
+        metadata.description = rtn.qtitle+" "+stripHtml(rtn.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' ')
         return rtn;
     }catch(err){
         console.log("error");
