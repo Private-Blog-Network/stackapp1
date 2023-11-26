@@ -1,19 +1,19 @@
 import Ans from "../../components/ans"
 import Script from "next/script"
 import stripHtml from "string-strip-html";
-import {metadata} from "../../layout"
 let dt;
 let aid;
 let m;
 let p;
-// export async function generateMetadata({params}){
-// return{
-//     title:dt?.qtitle,
-//     description:dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
-//     keywords:dt?.qtags.toString()
+export async function generateMetadata({params}){
+ let at = await gettl(params.answer)
+return{
+    title:"[SOLVED] "+at?.qtitle,
+    description:at?.qtitle+" "+at?stripHtml(at.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
+    keywords:at?.qtags.toString()
 
-// }
-// }
+}
+}
 
 function jsonld(){
     return `
@@ -59,6 +59,12 @@ export default async function ans({params}){
     )
 }
 
+async function gettl(id){
+  let f = await fetch("https://pewter-confused-gemini.glitch.me/res?id="+id)
+  let res = await f.json()
+  if (res.error) return false;
+  return res;
+}
 async function manageAnswer(id){
     try{
         let ans = await fetch(`https://api.stackexchange.com/2.3/answers/${id}/?site=stackoverflow&filter=withbody&key=${process.env.KEY}`);
@@ -76,8 +82,6 @@ async function manageAnswer(id){
             qtags:resqsn.items[0].tags,
             abody:resans.items[0].body
         }
-        metadata.title = "[SOLVED] "+rtn.qtitle
-        metadata.description = rtn.qtitle+" "+stripHtml(rtn.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' ')
         return rtn;
     }catch(err){
         console.log("error");
