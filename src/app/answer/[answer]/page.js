@@ -11,7 +11,6 @@ return{
     title:"[SOLVED] "+at?.qtitle,
     description:at?.qtitle+" "+at?stripHtml(at.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
     keywords:at?.qtags.toString()
-
 }
 }
 
@@ -60,10 +59,22 @@ export default async function ans({params}){
 }
 
 async function gettl(id){
-  let f = await fetch("https://pewter-confused-gemini.glitch.me/res?id="+id)
-  let res = await f.json()
-  if (res.error) return false;
-  return res;
+  try{
+    let ans = await fetch(`https://api.stackexchange.com/2.3/answers/${id}/?site=stackoverflow&filter=withbody&key=JBxjVFdP6JMHtmjMnFhHpQ((`);
+    let resans = await ans.json();
+    let qid = resans.items[0].question_id;
+    let qsn = await fetch(`https://api.stackexchange.com/2.3/questions/${qid}/?site=stackoverflow&filter=withbody&key=JBxjVFdP6JMHtmjMnFhHpQ((`);
+    let resqsn = await qsn.json();
+    let rtn =  {
+        qtitle:resqsn.items[0].title,
+        qbody:resqsn.items[0].body,
+        qtags:resqsn.items[0].tags,
+        abody:resans.items[0].body
+    }
+    return rtn;
+}catch(err){
+    console.log("error");
+}
 }
 async function manageAnswer(id){
     try{
