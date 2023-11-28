@@ -7,10 +7,18 @@ let m;
 let p;
 export async function generateMetadata({params}){
  let at = await gettl(params.answer)
-return{
-    title:"[SOLVED] "+at?.qtitle,
-    description:at?.qtitle+" "+at?stripHtml(at.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
-    keywords:at?.qtags.toString()
+if(at=='false'){
+return {
+    title:"[SOLVED] "+dt?.qtitle,
+    description:dt?.qtitle+" "+dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
+    keywords:dt?.qtags.toString()
+}
+}else{
+    return{
+        title:"[SOLVED] "+at?.qtitle,
+        description:at?.qtitle+" "+at?stripHtml(at.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
+        keywords:at?.qtags.toString()
+    }
 }
 }
 
@@ -73,7 +81,7 @@ async function gettl(id){
     }
     return rtn;
 }catch(err){
-    console.log("error");
+    return false;
 }
 }
 async function manageAnswer(id){
