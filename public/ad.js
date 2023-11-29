@@ -75,13 +75,44 @@ function loadAds3(){
 })
 }
 
+function loadAds4(){
+    return new Promise(res=>{
+    let scp = document.createElement("script")
+    let scp1 = document.createElement("script")
+    scp1.src="//collectbladders.com/77c8895075b148ec327619ee2e12568c/invoke.js"
+    scp.innerHTML=`
+    atOptions = {
+		'key' : '77c8895075b148ec327619ee2e12568c',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+    `;
+    document.querySelector(".ad4").appendChild(scp)
+    document.querySelector(".ad4").appendChild(scp1)
+    scp.onload=()=>{
+        // 
+    }
+    scp1.onload=()=>{
+        console.log("loaded4");
+    }
+    
+})
+}
+
 function loadAll(){
     loadAds()
-let ar = [loadAds1,loadAds3]
+let ar = [loadAds1,loadAds3,loadAds4]
 setTimeout(()=>{
     loadAds1()
     setTimeout(()=>{
         loadAds3()
-    } ,5000)
+        setTimeout(()=>{
+            setTimeout(()=>{
+        loadAds4()
+    } ,3000)
+        } ,3000)
+    } ,3000)
 } ,3000)
 }

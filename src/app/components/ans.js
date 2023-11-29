@@ -7,6 +7,7 @@ import Highlight from "./hjs"
 import Ad1 from "./ad1"
 import Ad2 from "./ad2"
 import Ad3 from "./ad3"
+import Ad4 from "./ad4"
 
 export default async function Ans({id,ms}){
     let dt = ms;
@@ -38,6 +39,7 @@ export default async function Ans({id,ms}){
                         ))
                       }
                     </ul>
+                    <Ad4/>
                     
                 </div>
                 <Footer/>

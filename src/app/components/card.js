@@ -2,6 +2,7 @@ import Link from "next/link"
 import Ad1 from "./ad1"
 import Ad2 from "./ad2"
 import Ad3 from "./ad3"
+import Ad4 from "./ad4"
   export default async function Card(props) {
     let data = await qsn(props.name,props.tag?.params.tag);
     return (
@@ -13,10 +14,11 @@ import Ad3 from "./ad3"
           <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100">
           <Ad3/>
           </div>
-            {data.map((e) => (
+            {data.map((e,i) => (
                 <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100" key={e.question_id}>
                     <div className="h4">{e.title.slice(0,30)+"..."}</div><hr />
                     <div>
+                      {i==5?<Ad4/>:""}<br/>
                         {
                             e.tags.map((x,i)=>(
                                 x!='undefined'?<Link className="badge badge-primary m-1" href={x} key={i}>
