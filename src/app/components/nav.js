@@ -25,7 +25,7 @@ return (
         {
             pls.obj.map((e,i)=>(
         <li className="nav-item" key={i}>
-          <Link className="nav-link active" aria-current="page" href={props.page=='page'?`../${e}`:e}>{e}</Link>
+          <Link className="nav-link active" aria-current="page" href={props.page=='page'?`../${e.toLowerCase()}`:"/"+e.toLowerCase()}>{e}</Link>
         </li>
             ))
         }

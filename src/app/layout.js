@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import Script from "next/script"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -11,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <Script type='text/javascript' src='//collectbladders.com/91/e0/cb/91e0cbf8ea08300e22465980db367b13.js' id="tera"></Script>
+        {children}</body>
     </html>
   )
 }

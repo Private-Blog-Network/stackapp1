@@ -5,7 +5,6 @@ import Ad3 from "./ad3"
 import Ad4 from "./ad4"
 
   export default async function Card(props) {
-    'use server'
     let data = await qsn(props.name,props.tag?.params.tag);
     return (
       <>
@@ -23,7 +22,7 @@ import Ad4 from "./ad4"
                       {i==5?<Ad4/>:""}<br/>
                         {
                             e.tags.map((x,i)=>(
-                                x!='undefined'?<Link className="badge badge-primary m-1" href={x} key={i}>
+                                x!='undefined'?<Link className="badge badge-primary m-1" href={"/"+x} key={i}>
                                     {x}
                                 </Link>:''
                             ))
