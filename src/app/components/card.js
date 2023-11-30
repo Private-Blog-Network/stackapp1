@@ -3,7 +3,9 @@ import Ad1 from "./ad1"
 import Ad2 from "./ad2"
 import Ad3 from "./ad3"
 import Ad4 from "./ad4"
+
   export default async function Card(props) {
+    'use server'
     let data = await qsn(props.name,props.tag?.params.tag);
     return (
       <>

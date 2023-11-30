@@ -8,22 +8,22 @@ export default function Footer({lk}){
       <span>Get connected with us on social networks:</span>
     </div>
     <div>
-      <Link href="" className="me-4 text-reset">
+      <Link href="#" className="me-4 text-reset">
         <i className="fab fa-facebook-f"></i>
       </Link>
-      <Link href="" className="me-4 text-reset">
+      <Link href="#" className="me-4 text-reset">
         <i className="fab fa-twitter"></i>
       </Link>
-      <Link href="" className="me-4 text-reset">
+      <Link href="#" className="me-4 text-reset">
         <i className="fab fa-google"></i>
       </Link>
-      <Link href="" className="me-4 text-reset">
+      <Link href="#" className="me-4 text-reset">
         <i className="fab fa-instagram"></i>
       </Link>
-      <Link href="" className="me-4 text-reset">
+      <Link href="#" className="me-4 text-reset">
         <i className="fab fa-linkedin"></i>
       </Link>
-      <Link href="" className="me-4 text-reset">
+      <Link href="#" className="me-4 text-reset">
         <i className="fab fa-github"></i>
       </Link>
     </div>
