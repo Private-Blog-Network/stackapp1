@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <Script type='text/javascript' src='//collectbladders.com/91/e0/cb/91e0cbf8ea08300e22465980db367b13.js' id="tera"></Script>
+      {/* <Script type='text/javascript' src='//collectbladders.com/91/e0/cb/91e0cbf8ea08300e22465980db367b13.js' id="tera"></Script> */}
         {children}</body>
     </html>
   )
