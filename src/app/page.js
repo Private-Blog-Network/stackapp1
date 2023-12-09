@@ -9,7 +9,7 @@ export default function Home() {
       <Nav/>
       <Load/>
       <Card name="home"/>
-      <Footer lk={true}/>
+      <Footer/>
       <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strategy="lazyOnload"/>
     </div>
   )
