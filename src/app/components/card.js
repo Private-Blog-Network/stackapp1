@@ -13,13 +13,13 @@ import Ad4 from "./ad4"
           <Ad1/>
           </div>
           <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100">
-          <Ad3/>
+          <Ad4/>
           </div>
             {data.map((e,i) => (
                 <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100" key={e.question_id}>
                     <div className="h4">{e.title.slice(0,30)+"..."}</div><hr />
                     <div>
-                      {i==5?<Ad4/>:""}<br/>
+                      {i==5?<Ad2/>:""}<br/>
                         {
                             e.tags.map((x,i)=>(
                                 x!='undefined'?<Link className="badge badge-primary m-1" href={"/"+x} key={i}>
@@ -33,7 +33,7 @@ import Ad4 from "./ad4"
             ))}
             
         </div>
-        <Ad2/>
+        <Ad3/>
         </>
     );
 }

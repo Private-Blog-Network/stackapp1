@@ -1,27 +1,34 @@
 function loadAds(){
-    return new Promise(res=>{
-    let scp = document.createElement("script")
-    let scp1 = document.createElement("script")
-    scp1.src="//collectbladders.com/286dc2d72d046f16b7c43cfa6ee77ccc/invoke.js"
-    scp.innerHTML=`
-	atOptions = {
-		'key' : '286dc2d72d046f16b7c43cfa6ee77ccc',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-    `;
-    document.querySelector(".ad1").appendChild(scp)
-    document.querySelector(".ad1").appendChild(scp1)
-    scp.onload=()=>{
-        // 
-    }
-    scp1.onload=()=>{
-        console.log("loaded");
-    }
+//     return new Promise(res=>{
+//     let ck = document.querySelector("#a1");
+//     let ck1 = document.querySelector("#b1");
+//     if(ck){
+//         ck.remove()
+//     }
+//     if(ck1){
+//         ck1.remove()
+//     }
+//     let scp = document.createElement("script")
+//     scp.id="a1"
+//     let scp1 = document.createElement("script")
+//     scp1.id="b1"
+//     scp1.src="//collectbladders.com/286dc2d72d046f16b7c43cfa6ee77ccc/invoke.js"
+//     scp.innerHTML=`
+// 	atOptions = {
+// 		'key' : '286dc2d72d046f16b7c43cfa6ee77ccc',
+// 		'format' : 'iframe',
+// 		'height' : 250,
+// 		'width' : 300,
+// 		'params' : {}
+// 	};
+//     `;
+//     document.querySelector(".ad1").appendChild(scp)
+//     document.querySelector(".ad1").appendChild(scp1)
+//     scp1.onload=()=>{
+//         res("ok")
+//     }
     
-})
+// })
 }
 
 function loadAds1(){
@@ -44,7 +51,7 @@ function loadAds1(){
     //    
     }
     scp1.onload=()=>{
-        console.log("loaded1");
+        res("ok")
     }
     
 })
@@ -69,7 +76,7 @@ function loadAds3(){
         // 
     }
     scp1.onload=()=>{
-        console.log("loaded3");
+        res("ok")
     }
     
 })
@@ -95,24 +102,8 @@ function loadAds4(){
         // 
     }
     scp1.onload=()=>{
-        console.log("loaded4");
+        res("ok")
     }
     
 })
-}
-
-function loadAll(){
-    loadAds()
-let ar = [loadAds1,loadAds3,loadAds4]
-setTimeout(()=>{
-    loadAds1()
-    setTimeout(()=>{
-        loadAds3()
-        setTimeout(()=>{
-            setTimeout(()=>{
-        loadAds4()
-    } ,3000)
-        } ,3000)
-    } ,3000)
-} ,3000)
 }

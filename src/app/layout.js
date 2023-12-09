@@ -11,11 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      {/* <Script type='text/javascript' src='//collectbladders.com/91/e0/cb/91e0cbf8ea08300e22465980db367b13.js' id="tera"></Script> */}
-      {/* <Script src="https://alwingulla.com/88/tag.min.js" data-zone="26613" async data-cfasync="false"></Script> */}
-
-      <Script src="/mon.js" data-cfasync="false"></Script>
-        {children}</body>
+      <Script async="async" data-cfasync="false" src="//collectbladders.com/22117bd38cb131c1c5659583265cdd1d/invoke.js"></Script>
+        {children}
+        <div id="container-22117bd38cb131c1c5659583265cdd1d"></div>
+        </body>
     </html>
   )
 }
