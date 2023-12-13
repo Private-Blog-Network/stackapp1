@@ -35,7 +35,7 @@ export default async function Ans({id,ms}){
                     <ul className="list-group">
                       {
                         related.map((e,i)=>(
-                          <li key={i} className="list-group-item"><Link href={`/answer/${e.accepted_answer_id}`} className="text-primary">{e.title}</Link></li>
+                          <li key={i} className="list-group-item"><Link href={`/answer/${e.accepted_answer_id}`}  legacyBehavior><a className="text-primary">{e.title}</a></Link></li>
                         ))
                       }
                     </ul>

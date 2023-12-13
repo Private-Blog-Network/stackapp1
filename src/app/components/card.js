@@ -22,8 +22,8 @@ import Ad4 from "./ad4"
                       {i==5?<Ad2/>:""}<br/>
                         {
                             e.tags.map((x,i)=>(
-                                x!='undefined'?<Link className="badge badge-primary m-1" href={"/"+x} key={i}>
-                                    {x}
+                                x!='undefined'?<Link href={"/"+x} key={i} legacyBehavior>
+                                   <a className="badge badge-primary m-1">{x}</a>
                                 </Link>:''
                             ))
                         }
