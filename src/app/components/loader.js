@@ -4,10 +4,9 @@ export default function Load(){
     return (
         <>
               <ProgressBar
-          height="4px"
-          color="blue"
+          height="2px"
+          color="purple"
           options={{ showSpinner: true }}
-          shallowRouting
         />
         </>
     )

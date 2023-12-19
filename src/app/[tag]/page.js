@@ -16,7 +16,6 @@ export default function tag(params){
         <Load/>
         <Card name='tag' tag={params}/>
         <Footer/>
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="hseo" strategy="lazyOnload"/>
         </>
     )
 }

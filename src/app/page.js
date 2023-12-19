@@ -10,7 +10,6 @@ export default function Home() {
       <Load/>
       <Card name="home"/>
       <Footer/>
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strategy="lazyOnload"/>
     </div>
   )
 }
