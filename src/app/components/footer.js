@@ -209,8 +209,9 @@ export default function Footer({lk}){
   </section>
   <div className="text-center p-4" style={{backgroundColor: 'rgba(0, 0, 0, 0.05)'}}>
     {new Date().toLocaleString()}<br/>
-    {lk?<Link href="https://codewithsundeep.com" target="_blank">Project Created By : Codewithsundeep</Link>:''}<br/>
-    Content Source : <Link href="https://stackoverflow.com/" target="_blank" rel="nofollow">Stackoverflow</Link>
+    Project Created By : 
+    <Link href="https://codewithsundeep.com" target="_blank">Codewithsundeep</Link><br/>
+    Content Source : <Link href="https://stackoverflow.com/" target="_blank">Stackoverflow</Link>
   </div>
 </footer>
         </>
