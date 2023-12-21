@@ -2,8 +2,8 @@ import Script from "next/script"
 export default function Analyse(){
     return(
         <>
-<Script async src="https://www.googletagmanager.com/gtag/js?id=G-E6MLEWLK39" id="analyse"></Script>
-<Script id="analyse1">
+<Script async src="https://www.googletagmanager.com/gtag/js?id=G-E6MLEWLK39" id="analyse" strateg="lazyOnload"></Script>
+<Script id="analyse1" strateg="lazyOnload">
     {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

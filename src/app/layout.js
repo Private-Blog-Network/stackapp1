@@ -10,10 +10,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-      <Script async="async" data-cfasync="false" src="//collectbladders.com/22117bd38cb131c1c5659583265cdd1d/invoke.js"></Script>
         {children}
-        <div id="container-22117bd38cb131c1c5659583265cdd1d"></div>
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb"/>
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strateg="lazyOnload"/>
         <Analyse/>
         </body>
     </html>

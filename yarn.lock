@@ -102,10 +102,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@next/env@14.0.4":
-  version "14.0.4"
-  resolved "https://registry.npmjs.org/@next/env/-/env-14.0.4.tgz"
-  integrity sha512-irQnbMLbUNQpP1wcE5NstJtbuA/69kRfzBrpAD7Gsn8zm/CY6YQYc3HQBz8QPxwISG26tIm5afvvVbu508oBeQ==
+"@next/env@14.0.5-canary.22":
+  version "14.0.5-canary.22"
+  resolved "https://registry.npmjs.org/@next/env/-/env-14.0.5-canary.22.tgz"
+  integrity sha512-5DeJcYOSPzwi1jq0AUZR0VBkmdbcL4Mq24e5G0JePXEep/0/FBy4DoLR2uVqraAOzI35jD5jkhodZ5pfbvUGzA==
 
 "@next/eslint-plugin-next@13.4.17":
   version "13.4.17"
@@ -114,10 +114,10 @@
   dependencies:
     glob "7.1.7"
 
-"@next/swc-win32-x64-msvc@14.0.4":
-  version "14.0.4"
-  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.4.tgz"
-  integrity sha512-yEh2+R8qDlDCjxVpzOTEpBLQTEFAcP2A8fUFLaWNap9GitYKkKv1//y2S6XY6zsR4rCOPRpU7plYDR+az2n30A==
+"@next/swc-win32-x64-msvc@14.0.5-canary.22":
+  version "14.0.5-canary.22"
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.5-canary.22.tgz"
+  integrity sha512-xE8eOtR4NVTZbg2xqGXxPYl1M4+/oKqOyEDjHTgEV4biqM/zxUavxwboerV/Rn07TGxSaz03Wa5OCXF6R9Tt+Q==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1598,12 +1598,12 @@ next-nprogress-bar@^2.1.2:
   dependencies:
     nprogress "^0.2.0"
 
-next@^14.0.4:
-  version "14.0.4"
-  resolved "https://registry.npmjs.org/next/-/next-14.0.4.tgz"
-  integrity sha512-qbwypnM7327SadwFtxXnQdGiKpkuhaRLE2uq62/nRul9cj9KhQ5LhHmlziTNqUidZotw/Q1I9OjirBROdUJNgA==
+next@^14.0.5-canary.22:
+  version "14.0.5-canary.22"
+  resolved "https://registry.npmjs.org/next/-/next-14.0.5-canary.22.tgz"
+  integrity sha512-9f6BOZmvrzT9zYm/QJMyBRLilBN3+LLiJ4rN1z6SeS1v5dYBrTmMQCY8eYN0HWuqGUvtJkz8DvPTttRZF2XqGg==
   dependencies:
-    "@next/env" "14.0.4"
+    "@next/env" "14.0.5-canary.22"
     "@swc/helpers" "0.5.2"
     busboy "1.6.0"
     caniuse-lite "^1.0.30001406"
@@ -1612,15 +1612,15 @@ next@^14.0.4:
     styled-jsx "5.1.1"
     watchpack "2.4.0"
   optionalDependencies:
-    "@next/swc-darwin-arm64" "14.0.4"
-    "@next/swc-darwin-x64" "14.0.4"
-    "@next/swc-linux-arm64-gnu" "14.0.4"
-    "@next/swc-linux-arm64-musl" "14.0.4"
-    "@next/swc-linux-x64-gnu" "14.0.4"
-    "@next/swc-linux-x64-musl" "14.0.4"
-    "@next/swc-win32-arm64-msvc" "14.0.4"
-    "@next/swc-win32-ia32-msvc" "14.0.4"
-    "@next/swc-win32-x64-msvc" "14.0.4"
+    "@next/swc-darwin-arm64" "14.0.5-canary.22"
+    "@next/swc-darwin-x64" "14.0.5-canary.22"
+    "@next/swc-linux-arm64-gnu" "14.0.5-canary.22"
+    "@next/swc-linux-arm64-musl" "14.0.5-canary.22"
+    "@next/swc-linux-x64-gnu" "14.0.5-canary.22"
+    "@next/swc-linux-x64-musl" "14.0.5-canary.22"
+    "@next/swc-win32-arm64-msvc" "14.0.5-canary.22"
+    "@next/swc-win32-ia32-msvc" "14.0.5-canary.22"
+    "@next/swc-win32-x64-msvc" "14.0.5-canary.22"
 
 node-releases@^2.0.13:
   version "2.0.13"
