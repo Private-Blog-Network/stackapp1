@@ -8,7 +8,7 @@ import Ad1 from "./ad1"
 import Ad2 from "./ad2"
 import Ad3 from "./ad3"
 import Ad4 from "./ad4"
-import Popup from "./popup"
+// import Popup from "./popup"
 
 export default async function Ans({id,ms}){
     let dt = ms;
@@ -43,7 +43,7 @@ export default async function Ans({id,ms}){
                     <Ad4/>
                     
                 </div>
-                <Popup/>
+                {/* <Popup/> */}
                 <Footer/>
                 <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strategy="lazyOnload"/>
                 <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" id="hljs"/> 
