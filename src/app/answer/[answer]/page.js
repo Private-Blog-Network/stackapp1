@@ -28,7 +28,7 @@ function jsonld(){
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "[SOLVED] ${dt?.qtitle}",
+        "headline": "${dt?.qtitle}",
         "datePublished": "${new Date(p*1000).toISOString()}",
         "dateModified": "${new Date(m?m:p*1000).toISOString()}",
         "publisher": {
