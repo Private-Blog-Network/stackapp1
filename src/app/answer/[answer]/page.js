@@ -15,8 +15,8 @@ return {
 }
 }else{
     return{
-        title:"[SOLVED] "+at?.qtitle,
-        description:at?.qtitle+" "+at?stripHtml(at.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
+        title:at?.qtitle,
+        description:at?stripHtml(at.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
         keywords:at?.qtags.toString()
     }
 }
@@ -47,7 +47,7 @@ function jsonld(){
           "height": 800,
           "width": 1200
         },
-        "description": "${dt.qtitle} ${dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):''}",
+        "description": "${dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):''}",
         "url": "/answer/${aid}",
         "mainEntityOfPage": "/answer/${aid}"
       }
