@@ -6,3 +6,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#cardo{
+    width: 45% !important;
+}
+
+.progressMainWrapper {
+    background-color: transparent;
+    height: 8px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .progressMainStyle {
+    height: 8px;
+    background-color: #00cc83;
+    width: 15%;
+  }
+  code{
+    color:rgb(35, 23, 252) !important;
+  }
+  .text-reset{
+    color: black !important;
+  }
+@media only screen and (max-width: 600px) {
+    #cardo{
+        width: 95% !important;
+    }
+  }
+  

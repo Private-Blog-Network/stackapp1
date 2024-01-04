@@ -8,6 +8,7 @@ import Ad1 from "./ad1"
 import Ad2 from "./ad2"
 import Ad3 from "./ad3"
 import Ad4 from "./ad4"
+import Share from "./share"
 // import Popup from "./popup"
 
 export default async function Ans({id,ms}){
@@ -32,6 +33,8 @@ export default async function Ans({id,ms}){
                   <Ad2/>
                     <div dangerouslySetInnerHTML={{__html:dt.abody}}> 
                     </div>
+                    <br/>
+                    <Share/><br/>
                     <Ad3/>
                     <ul className="list-group">
                       {
@@ -40,6 +43,7 @@ export default async function Ans({id,ms}){
                         ))
                       }
                     </ul>
+                    
                     <Ad4/>
                     
                 </div>

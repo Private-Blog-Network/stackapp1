@@ -9,14 +9,14 @@ import Ad4 from "./ad4"
     return (
       <>
         <div className="d-flex justify-content-evenly flex-wrap">
-          <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100">
+          <div className="rounded m-2 p-2 w-45 sm:w-100" id="cardo">
           <Ad1/>
           </div>
-          <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100">
+          <div className="rounded m-2 p-2 w-45 sm:w-100" id="cardo">
           <Ad4/>
           </div>
             {data.map((e,i) => (
-                <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100" key={e.question_id}>
+                <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100" key={e.question_id} id="cardo">
                     <div className="h4">{e.title.slice(0,30)+"..."}</div><hr />
                     <div>
                       {i==5?<Ad2/>:""}<br/>
@@ -33,7 +33,9 @@ import Ad4 from "./ad4"
             ))}
             
         </div>
+        <div className="d-flex items-center justify-center container">
         <Ad3/>
+        </div>
         </>
     );
 }

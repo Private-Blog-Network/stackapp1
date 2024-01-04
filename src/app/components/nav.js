@@ -8,7 +8,7 @@ return (
 <Script id="ads" src="/ad.js"></Script>
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
-    <Link className="navbar-brand" href={props.page=='page'?`../`:'.'}>My Code Helper</Link>
+    <Link className="navbar-brand" href={props.page=='page'?`../`:'.'}>EXAMPLE-A</Link>
     <button
       className="navbar-toggler"
       type="button"
