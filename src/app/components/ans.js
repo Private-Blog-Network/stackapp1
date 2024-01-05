@@ -10,10 +10,16 @@ import Ad3 from "./ad3"
 import Ad4 from "./ad4"
 import Share from "./share"
 // import Popup from "./popup"
-
+const cache = {};
 export default async function Ans({id,ms}){
     let dt = ms;
-    let related = await getRelated(dt.qtags[0])
+    let related;
+    if(cache[dt.qtags[0]]){
+      related = cache[dt.qtags[0]];
+    }else{
+      related = await getRelated(dt.qtags[0]);
+      cache[dt.qtags[0]]=related;
+    }
     return(
             <>
             <Nav page="page"/>

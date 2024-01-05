@@ -5,8 +5,16 @@ let dt;
 let aid;
 let m;
 let p;
+const cache = {};
+const dtcache = {};
 export async function generateMetadata({params}){
- let at = await gettl(params.answer)
+ let at; 
+ if(cache[params.answer]){
+    at = cache[params.answer];
+ }else{
+    at = await gettl(params.answer);
+    cache[params.answer] = at;
+ }
 if(at=='false'){
 return {
     title:"[SOLVED] "+dt?.qtitle,
@@ -57,7 +65,12 @@ function jsonld(){
 }
 
 export default async function ans({params}){
-    dt = await  manageAnswer(params.answer);
+    if(dtcache[params.answer]){
+        dt = dtcache[params.answer];
+    }else{
+        dt = await  manageAnswer(params.answer);
+        dtcache[params.answer] = dt;
+    }
     return (
         <>
         <div dangerouslySetInnerHTML={{__html:jsonld()}}></div>
