@@ -9,6 +9,7 @@
 
 #cardo{
     width: 45% !important;
+    overflow: hidden;
 }
 body {
   background-color: #ffffff !important; /* White background */
@@ -30,6 +31,8 @@ footer * {
   }
   #ftlk{
     color: blue !important;
+    opacity: 500 !important;
+    background-color: #ffffff !important;
   }
   .progressMainStyle {
     height: 8px;
