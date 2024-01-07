@@ -10,6 +10,14 @@
 #cardo{
     width: 45% !important;
 }
+body {
+  background-color: #ffffff !important; /* White background */
+  color: #333333 !important; /* Dark text color */
+}
+footer * {
+  background-color: #ffffff !important; /* White background */
+  color: #333333 !important; /* Dark text color */
+}
 
 .progressMainWrapper {
     background-color: transparent;
@@ -32,6 +40,11 @@
   .text-reset{
     color: black !important;
   }
+  #answercontent {
+    background-color: #ffffff !important; /* White background */
+    color: #333333 !important; /* Dark text color */
+  }
+  
 @media only screen and (max-width: 600px) {
     #cardo{
         width: 95% !important;

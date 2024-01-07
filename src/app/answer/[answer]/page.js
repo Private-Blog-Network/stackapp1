@@ -72,10 +72,10 @@ export default async function ans({params}){
         dtcache[params.answer] = dt;
     }
     return (
-        <>
+        <div id="answercontent">
         <div dangerouslySetInnerHTML={{__html:jsonld()}}></div>
         <Ans id={params.answer} ms={dt}/>
-        </>
+        </div>
     )
 }
 

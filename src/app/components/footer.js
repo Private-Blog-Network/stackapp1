@@ -3,38 +3,11 @@ export default function Footer({lk}){
     return(
         <>
 <footer className="text-center text-lg-start bg-body-tertiary text-muted">
-  <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <div className="me-5 d-none d-lg-block">
-      <span>Get connected with us on social networks:</span>
-    </div>
-    <div>
-      <Link href="#" className="me-4 text-reset">
-        <i className="fab fa-facebook-f"></i>
-      </Link>
-      <Link href="#" className="me-4 text-reset">
-        <i className="fab fa-twitter"></i>
-      </Link>
-      <Link href="#" className="me-4 text-reset">
-        <i className="fab fa-google"></i>
-      </Link>
-      <Link href="#" className="me-4 text-reset">
-        <i className="fab fa-instagram"></i>
-      </Link>
-      <Link href="#" className="me-4 text-reset">
-        <i className="fab fa-linkedin"></i>
-      </Link>
-      <Link href="#" className="me-4 text-reset">
-        <i className="fab fa-github"></i>
-      </Link>
-    </div>
-  </section>
-
-  <section className="ok">
     <div className="container text-center text-md-start mt-5">
       <div className="row mt-3">
         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <h6 className="text-uppercase fw-bold mb-4">
-            <i className="fas fa-gem me-3"></i>Some Links
+          Some Links
           </h6>
           <p className="text-reset"><Link href='/node.js'>node.js</Link></p>
 <p className="text-reset"><Link href='/express'>express</Link></p>
@@ -206,7 +179,6 @@ export default function Footer({lk}){
         </div>
       </div>
     </div>
-  </section>
   <div className="text-center p-4" style={{backgroundColor: 'rgba(0, 0, 0, 0.05)'}}>
     {new Date().toLocaleString()}<br/>
     Project Created By : 
