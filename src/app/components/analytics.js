@@ -3,7 +3,7 @@ export default function Analyse(){
     return(
         <>
 <Script async src="https://www.googletagmanager.com/gtag/js?id=G-E6MLEWLK39" id="analyse" strateg="lazyOnload"></Script>
-<Script id="analyse1" strateg="lazyOnload">
+<Script id="analyse1" strategy="lazyOnload">
     {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
