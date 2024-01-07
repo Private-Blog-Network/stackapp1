@@ -4,7 +4,7 @@ export default function Footer1(){
         <footer className="bg-body-tertiary text-center text-lg-start">
   <div className="text-center p-3">
     Content Source : 
-    <a className="text-body" href="https://stackoverflow.com" rel="nofollow noopener">Stackoverflow</a>
+    <a className="text-body text-primary" href="https://stackoverflow.com" rel="nofollow noopener" id="ftlk">Stackoverflow</a>
   </div>
 </footer>
         </>

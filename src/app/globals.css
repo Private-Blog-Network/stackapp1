@@ -28,7 +28,9 @@ footer * {
     z-index: 1;
     width: 100%;
   }
-  
+  #ftlk{
+    color: blue !important;
+  }
   .progressMainStyle {
     height: 8px;
     background-color: #00cc83;
