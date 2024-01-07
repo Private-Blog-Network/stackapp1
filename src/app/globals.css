@@ -19,6 +19,10 @@ footer * {
   background-color: #ffffff !important; /* White background */
   color: #333333 !important; /* Dark text color */
 }
+.ftr1 * {
+  background-color: #ffffff !important; /* White background */
+  color: #333333 !important; /* Dark text color */
+}
 
 .progressMainWrapper {
     background-color: transparent;

@@ -1,6 +1,6 @@
 export default function Footer1(){
     return(
-        <div className="container"><hr />
+        <div className="container ftr1"><hr />
         <footer className="bg-body-tertiary text-center text-lg-start">
   <div className="text-center p-3">
     Content Source : 
