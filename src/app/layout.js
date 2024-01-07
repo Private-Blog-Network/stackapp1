@@ -1,6 +1,5 @@
 import './globals.css'
 import Script from 'next/script'
-import Analyse from "./components/analytics"
 import Indicate from "./components/indicator"
 export const metadata = {
   title: 'EXAMPLE-A',
@@ -15,7 +14,6 @@ export default function RootLayout({ children }) {
         {children}
         <Script src="/custom.js" id="cstmjs"></Script>
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strateg="beforeInteractive"/>
-        <Analyse/>
         </body>
     </html>
   )

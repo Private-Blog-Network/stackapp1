@@ -1,7 +1,7 @@
 import Card from "./components/card"
 import Nav from "./components/nav"
 import Script from "next/script"
-import Footer from "./components/footer"
+import Footer1 from "./components/footer1"
 import Load from "./components/loader"
 export const dynamic = 'force-dynamic'
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Nav/>
       <Load/>
       <Card name="home"/>
-      <Footer/>
+      <Footer1/>
     </div>
   )
 }
