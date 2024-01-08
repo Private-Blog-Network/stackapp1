@@ -3,6 +3,7 @@ import Nav from "./components/nav"
 import Script from "next/script"
 import Footer1 from "./components/footer1"
 import Load from "./components/loader"
+import Adlinks from "./components/adlinks"
 export const dynamic = 'force-dynamic'
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Nav/>
       <Load/>
       <Card name="home"/>
+      <Adlinks/>
       <Footer1/>
     </div>
   )

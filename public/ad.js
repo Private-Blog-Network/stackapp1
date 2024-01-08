@@ -48,7 +48,6 @@ function loadAds1(){
     document.querySelector(".ad2").appendChild(scp)
     document.querySelector(".ad2").appendChild(scp1)
     scp.onload=()=>{
-    //    
     }
     scp1.onload=()=>{
         res("ok")
