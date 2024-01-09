@@ -36,7 +36,7 @@ function jsonld(){
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "${dt?.qtitle}",
+        "headline": "${dt?.qtitle.replaceAll(/\\|\/|:|;|,|\./g,'')}",
         "datePublished": "${new Date(p*1000).toISOString()}",
         "dateModified": "${new Date(m?m:p*1000).toISOString()}",
         "publisher": {

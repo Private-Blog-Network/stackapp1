@@ -13,7 +13,6 @@ export default function RootLayout({ children }) {
         <Indicate/>
         {children}
         <Script src="/custom.js" id="cstmjs"></Script>
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js" id="mdb" strateg="beforeInteractive"/>
         </body>
     </html>
   )

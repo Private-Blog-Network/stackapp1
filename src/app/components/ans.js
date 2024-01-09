@@ -1,7 +1,7 @@
 import Script from 'next/script'
 import Link from "next/link"
 import Nav from "./nav"
-import Footer from "./footer"
+import Footer1 from "./footer1"
 import Load from "./loader"
 import Highlight from "./hjs"
 import Ad1 from "./ad1"
@@ -53,7 +53,7 @@ export default async function Ans({id,ms}){
                     <Ad4/>
                     
                 </div>
-                <Footer/>
+                <Footer1/>
                 <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" id="hljs"/> 
                     <Highlight/>
             </>
