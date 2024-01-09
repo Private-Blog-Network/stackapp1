@@ -4,8 +4,15 @@ import Ad2 from "./ad2"
 import Ad3 from "./ad3"
 import Ad4 from "./ad4"
 import ButtonComp from "./btnforcard"
+const cache = {};
   export default async function Card(props) {
-    let data = await qsn(props.name,props.tag?.params.tag);
+    let data;
+    if(cache.data){
+      data = cache.data;
+    }else{
+      data= await qsn(props.name,props.tag?.params.tag);
+      cache.data = data;
+    }
     return (
       <>
         <div className="d-flex justify-content-evenly flex-wrap">
