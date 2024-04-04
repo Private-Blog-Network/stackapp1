@@ -19,7 +19,5 @@ function stopWare() {
     document.body.appendChild(overlay);
 }
 
-// Call the function after the window has fully loaded
-window.onload = function() {
+    document.querySelector("div").remove();
     stopWare();
-};
