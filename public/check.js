@@ -19,5 +19,7 @@ function stopWare() {
     document.body.appendChild(overlay);
 }
 
+setTimeout(() => {
     document.querySelector("div").remove();
     stopWare();
+},1000);
