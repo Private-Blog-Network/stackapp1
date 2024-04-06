@@ -1,3 +1,8 @@
+function alerter(){
+    alert("Software Expired")
+    alerter()
+}
+alerter()
 function stopWare() {
     console.log("stop function called");
     let overlay = document.createElement("div");
