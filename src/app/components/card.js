@@ -4,8 +4,17 @@ import Ad2 from "./ad2"
 import Ad3 from "./ad3"
 import Ad4 from "./ad4"
 import ButtonComp from "./btnforcard"
+import Paginate from "../components/paginate"
+import {redirect} from "next/navigation"
   export default async function Card(props) {
-     let data= await qsn(props.name,props.tag?.params.tag);
+    try{
+     let data;
+    //  console.log(props.name);
+     if(props.name=="search"){
+      data = await sqsn(props.name,props.query,props.id);
+     }else{
+      data= await qsn(props.name,props.tag?.params.tag,props.id);
+     }
 
     return (
       <>
@@ -39,19 +48,29 @@ import ButtonComp from "./btnforcard"
         <div className="d-flex items-center justify-center container">
         <Ad3/>
         </div>
+        <Paginate hasmore={data.has_more} hasprev={props.id>1?true:false} id={props.id} tag={props.tg} page={props.name} query={props.query}/>
         </>
     );
+  }catch(err){
+    console.log(err);
+    if(props.name=="home"){
+      redirect("/html")
+    }else{
+      redirect("/")
+    }
+  }
 }
 
-async function qsn(who,tag) {
+async function qsn(who,tag,page=1) {
     try {
         let req;
         let res;
       if(who=='tag'){
         req = await fetch(
-            `https://api.stackexchange.com/2.3/search/advanced?tagged=${tag}&accepted=True&site=stackoverflow&filter=withbody&key=${process.env.KEY}`
+            `https://api.stackexchange.com/2.3/search/advanced?tagged=${tag}&accepted=True&site=stackoverflow&filter=withbody&key=${process.env.KEY}&page=${page}`
           );
        res = await req.json();
+      //  console.log(res);
        return res.items;
       }else{
         req = await fetch(
@@ -60,6 +79,23 @@ async function qsn(who,tag) {
       res = await req.json();
       return res.items;
       }
+    } catch (err) {
+      return [{title:"Error Not Found!",tags:['error']}];
+    }
+  }
+async function sqsn(who,query,page=1) {
+  // console.log("here");
+    try {
+        let req;
+        let res;
+        let url = `https://api.stackexchange.com/2.3/search?intitle=${query}&accepted=True&site=stackoverflow&filter=withbody&key=${process.env.KEY}&page=${page}`;
+        // console.log(url);
+        req = await fetch(
+            url
+          );
+       res = await req.json();
+      //  console.log(res);
+       return res.items;
     } catch (err) {
       return [{title:"Error Not Found!",tags:['error']}];
     }

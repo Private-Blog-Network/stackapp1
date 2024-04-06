@@ -1,6 +1,7 @@
 import Ans from "../../components/ans"
 import Script from "next/script"
 import stripHtml from "string-strip-html";
+import {redirect} from "next/navigation"
 let dt;
 let aid;
 let m;
@@ -65,6 +66,7 @@ function jsonld(){
 }
 
 export default async function ans({params}){
+   try {
     if(dtcache[params.answer]){
         dt = dtcache[params.answer];
     }else{
@@ -77,6 +79,9 @@ export default async function ans({params}){
         <Ans id={params.answer} ms={dt}/>
         </div>
     )
+   } catch (error) {
+    redirect("/")
+   }
 }
 
 async function gettl(id){

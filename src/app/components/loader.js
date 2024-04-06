@@ -7,6 +7,7 @@ export default function Load(){
           height="2px"
           color="purple"
           options={{ showSpinner: true }}
+          shallowRouting
         />
         </>
     )
