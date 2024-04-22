@@ -9,29 +9,24 @@ let p;
 const cache = {};
 const dtcache = {};
 export async function generateMetadata({params}){
- let at; 
- if(cache[params.answer]){
-    at = cache[params.answer];
- }else{
-    at = await gettl(params.answer);
-    cache[params.answer] = at;
- }
-if(at=='false'){
-return {
-    title:"[SOLVED] "+dt?.qtitle,
-    description:dt?.qtitle+" "+dt?stripHtml(dt.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
-    keywords:dt?.qtags.toString()
-}
-}else{
+try{
+
+    let at = await gettl(params.answer);
     return{
-        title:at?.qtitle,
-        description:at?stripHtml(at.qbody.slice(0,700)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
-        keywords:at?.qtags.toString()
-    }
+     title:at?.qtitle,
+     description:at?.qtitle+" "+at?stripHtml(at.qbody.slice(0,200)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
+     keywords:at?.qtags.toString(),
+     alternates:{
+         canonical:`/answer/${aid}`
+     }
+     }
+}catch(err){
+    return ""
 }
 }
 
 function jsonld(){
+   try{
     return `
     <script type="application/ld+json">
     {
@@ -42,7 +37,7 @@ function jsonld(){
         "dateModified": "${new Date(m?m:p*1000).toISOString()}",
         "publisher": {
           "@type": "Organization",
-          "name": "CoderApp",
+          "name": "example-a",
           "logo": {
             "@type": "ImageObject",
             "url": "/code.jpg",
@@ -63,16 +58,14 @@ function jsonld(){
       </script>
     
     `
+   }catch(err){
+    return ""
+   }
 }
 
 export default async function ans({params}){
    try {
-    if(dtcache[params.answer]){
-        dt = dtcache[params.answer];
-    }else{
         dt = await  manageAnswer(params.answer);
-        dtcache[params.answer] = dt;
-    }
     return (
         <div id="answercontent">
         <div dangerouslySetInnerHTML={{__html:jsonld()}}></div>

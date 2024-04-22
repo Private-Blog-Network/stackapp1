@@ -26,7 +26,7 @@ export default async function Ans({id,ms}){
             <Load/>
                 <div className="container shadow-4 rounded mt-3 mb-3 p-3 border border-primary">
                     {
-                        dt.qtags.map((e,i)=>(
+                        dt.qtags?.map((e,i)=>(
                             <Link href={`../${e}`} className="badge badge-primary m-1" key={i}>{e}</Link>
                         ))
                     }
@@ -44,7 +44,7 @@ export default async function Ans({id,ms}){
                     <Ad3/>
                     <ul className="list-group">
                       {
-                        related.map((e,i)=>(
+                        related?.map((e,i)=>(
                           <li key={i} className="list-group-item"><Link href={`/answer/${e.accepted_answer_id}`}  legacyBehavior><a className="text-primary">{e.title}</a></Link></li>
                         ))
                       }
