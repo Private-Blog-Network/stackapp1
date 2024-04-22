@@ -20,10 +20,10 @@ import {redirect} from "next/navigation"
       <>
         <div className="d-flex justify-content-evenly flex-wrap">
           <div className="rounded m-2 p-2 w-45 sm:w-100" id="cardo">
-          {/* <Ad1/> */}
+          <Ad1/>
           </div>
           <div className="rounded m-2 p-2 w-45 sm:w-100" id="cardo">
-          {/* <Ad4/> */}
+          <Ad4/>
           </div>
             {data.map((e,i) => (
                 <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100" key={e.question_id} id="cardo">
@@ -31,7 +31,7 @@ import {redirect} from "next/navigation"
                     <Link id={`clickid${i}`} href={`/answer/${e.accepted_answer_id}`} > {e.title.slice(0,100)+"..."}</Link>
                       </div><hr />
                     <div>
-                      {/* {i==5?<Ad2/>:""}<br/> */}
+                      {i==5?<Ad2/>:""}<br/>
                         {
                             e.tags.map((x,i)=>(
                                 x!='undefined'?<Link href={"/"+x} key={i} legacyBehavior>
@@ -46,7 +46,7 @@ import {redirect} from "next/navigation"
             
         </div>
         <div className="d-flex items-center justify-center container">
-        {/* <Ad3/> */}
+        <Ad3/>
         </div>
         <Paginate hasmore={data.has_more} hasprev={props.id>1?true:false} id={props.id} tag={props.tg} page={props.name} query={props.query}/>
         </>
@@ -88,14 +88,14 @@ async function sqsn(who,query,page=1) {
     try {
         let req;
         let res;
-        let url = `https://api.stackexchange.com/2.3/search?intitle=${query}&accepted=True&site=stackoverflow&filter=withbody&key=${process.env.KEY}&page=${page}`;
-        console.log(url);
+        let url = `https://api.stackexchange.com/2.3/search?intitle=${query}&accepted=True&site=stackoverflow&is_answered=True&filter=withbody&key=${process.env.KEY}&page=${page}`;
+        // console.log(url);
         req = await fetch(
             url
           );
        res = await req.json();
       //  console.log(res);
-       return res.items;
+       return res.items.filter(e=>e.accepted_answer_id);
     } catch (err) {
       return [{title:"Error Not Found!",tags:['error']}];
     }
