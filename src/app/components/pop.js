@@ -45,7 +45,7 @@ export default function Pop(){
     useEffect(()=>{
         setTimeout(() => {
             setModalOpen(true)
-        }, 10000);
+        }, 15000);
     },[])
     return (
         <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
