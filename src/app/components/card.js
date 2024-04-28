@@ -28,7 +28,7 @@ import {redirect} from "next/navigation"
             {data.map((e,i) => (
                 <div className="shadow-6 border border-primary rounded m-2 p-2 w-45 sm:w-100" key={e.question_id} id="cardo">
                     <div className="h4">
-                    <Link id={`clickid${i}`} href={`/answer/${e.accepted_answer_id}`} > {e.title.slice(0,100)+"..."}</Link>
+                     {e.title.slice(0,100)+"..."}
                       </div><hr />
                     <div>
                       {i==5?<Ad2/>:""}<br/>
@@ -40,7 +40,7 @@ import {redirect} from "next/navigation"
                             ))
                         }
                     </div><hr />
-                    <ButtonComp idt={i}/>
+                    <Link className="btn btn-primary rounded" href={`/answer/${e.accepted_answer_id}`} >Read More</Link>
                 </div>
             ))}
             
