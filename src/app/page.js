@@ -13,7 +13,7 @@ try{
       <Nav/>
       <Load/>
       <Card name="home" id={1}/>
-      <Adlinks/>
+      {/* <Adlinks/> */}
       <Footer1/>
     </div>
   )

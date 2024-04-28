@@ -1,5 +1,6 @@
 import './globals.css'
 import Script from 'next/script'
+import Pop from "./components/pop"
 import Indicate from "./components/indicator"
 export const metadata = {
   title: 'EXAMPLE-A',
@@ -14,8 +15,9 @@ export default function RootLayout({ children }) {
         {children}
         <Script src="/custom.js" id="cstmjs"></Script>
 {/* <Script src="/y1.js"></Script> */}
-<Script src="https://yandex.ru/ads/system/context.js" async></Script>
+{/* <Script src="https://yandex.ru/ads/system/context.js" async></Script> */}
 {/* <Script src="/y2.js"></Script> */}
+<Pop/>
         </body>
     </html>
   )
