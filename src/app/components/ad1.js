@@ -1,6 +1,6 @@
 'use client'
 import {useEffect,useRef} from "react"
-import Pop from "./pop"
+// import Pop from "./pop"
 import Router from 'next/router'
 export default function Ad1() {
 const nw = useRef()
@@ -114,7 +114,6 @@ if(ss){
 return(
 <>
 <div id="ad1" ref={nw}></div>
-<Pop/>
 </>
 )
 }
