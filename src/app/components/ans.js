@@ -2,7 +2,6 @@ import Script from 'next/script'
 import Link from "next/link"
 import Nav from "./nav"
 import Footer1 from "./footer1"
-import Load from "./loader"
 import Highlight from "./hjs"
 import Ad1 from "./ad1"
 import Ad2 from "./ad2"
@@ -23,7 +22,6 @@ export default async function Ans({id,ms}){
     return(
             <>
             <Nav page="page"/>
-            <Load/>
                 <div className="container shadow-4 rounded mt-3 mb-3 p-3 border border-primary">
                     {
                         dt.qtags?.map((e,i)=>(

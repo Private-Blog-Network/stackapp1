@@ -11,6 +11,7 @@
   "dependencies": {
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.17",
+    "formik": "^2.4.6",
     "next": "^14.0.5-canary.22",
     "next-nprogress-bar": "^2.1.2",
     "pdfjs-dist": "^4.0.379",
@@ -19,7 +20,9 @@
     "react-pdf": "^7.6.0",
     "sharethis-reactjs": "^1.6.0",
     "string-strip-html": "^4.3.9",
-    "styled-components": "^6.1.6"
+    "styled-components": "^6.1.6",
+    "sweetalert": "^2.1.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
