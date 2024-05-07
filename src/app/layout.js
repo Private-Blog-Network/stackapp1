@@ -1,4 +1,5 @@
 import './globals.css'
+import './mdb.css'
 import Script from 'next/script'
 import Indicate from "./components/indicator"
 export const metadata = {
