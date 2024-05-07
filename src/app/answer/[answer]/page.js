@@ -17,7 +17,7 @@ try{
      description:at?.qtitle+" "+at?stripHtml(at.qbody.slice(0,200)).replaceAll(/\n|"|\t|\\|\s|  /g,' '):'',
      keywords:at?.qtags.toString(),
      alternates:{
-         canonical:`/answer/${aid}`
+         canonical:`https://example-a.com/answer/${aid}`
      }
      }
 }catch(err){
