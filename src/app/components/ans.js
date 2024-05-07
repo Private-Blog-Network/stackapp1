@@ -52,8 +52,7 @@ export default async function Ans({id,ms}){
                     
                 </div>
                 <Footer1/>
-                <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" id="hljs"/> 
-                    <Highlight/>
+                <Highlight/>
             </>
     )
 }
