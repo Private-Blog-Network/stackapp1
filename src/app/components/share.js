@@ -1,9 +1,12 @@
 "use client"
 import {InlineShareButtons} from 'sharethis-reactjs';
+import {useState,useEffect} from "react"
 export default function Share(){
-    return(
-        <>
-                <InlineShareButtons
+  const [sr,setsr] = useState("")
+  useEffect(()=>{
+    window.addEventListener('scroll', ()=>{
+      setsr(
+        <InlineShareButtons
           config={{
             alignment: 'center',
             color: 'social',
@@ -25,6 +28,12 @@ export default function Share(){
             size: 40
           }}
         />
+      )
+    });
+  },[])
+    return(
+        <>
+                {sr}
         </>
     )
 }
