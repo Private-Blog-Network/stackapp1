@@ -1,7 +1,6 @@
 import Card from "../../components/card"
 import Nav from "../../components/nav"
 import Footer1 from "../../components/footer1"
-import Load from "../../components/loader"
 import Script from 'next/script'
 import { redirect } from 'next/navigation'
 export function generateMetadata({params}){
@@ -15,7 +14,6 @@ export default function Getbypage(params){
     return(
         <>
         <Nav/>
-        <Load/>
         <Card name='tag' tg={params.params.tag} id={params.params.id?params.params.id:1} tag={params}/>
         <Footer1/>
         </>
