@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "purgecss --css src/app/mdb.min.css --content src/app/*.js src/app/*/*.js --output src/app/mdb.css"
   },
   "dependencies": {
     "eslint": "8.47.0",
@@ -15,6 +16,7 @@
     "next": "^14.0.5-canary.22",
     "next-nprogress-bar": "^2.1.2",
     "pdfjs-dist": "^4.0.379",
+    "purgecss": "^6.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-pdf": "^7.6.0",
