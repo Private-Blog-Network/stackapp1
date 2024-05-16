@@ -3,6 +3,7 @@ import Link from "next/link"
 import Script from "next/script"
 import {useRef} from "react"
 import {useRouter} from "next/navigation"
+import Load from "../components/loader"
 export default function Nav(props){
 const sref=useRef()
 const fmref=useRef()
@@ -35,6 +36,7 @@ return (
     </form>
   </div>
 </nav>
+<Load/>
     </>
 )
 }
